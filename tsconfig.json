@@ -24,6 +24,7 @@
             "src/*": ["./src/*"],
             "components/*": ["./src/components/*"],
             "containers/*": ["./src/containers/*"],
+            "layouts/*": ["./src/layouts/*"],
             "static/*": ["./static/*"],
             "actions/*": ["./src/actions/*"],
             "reducers/*": ["./src/reducers/*"],
