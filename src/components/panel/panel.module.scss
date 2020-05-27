@@ -1,0 +1,10 @@
+.panel__cards {
+    display: flex;
+}
+
+.panel__card {
+    margin-right: 20px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
