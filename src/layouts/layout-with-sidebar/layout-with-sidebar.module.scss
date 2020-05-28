@@ -1,6 +1,12 @@
 .layout-with-sidebar {
     display: grid;
     grid-gap: 40px;
+}
+
+.sidebar--left {
     grid-template-columns: 200px auto;
-    width: 1300px;
+}
+
+.sidebar--right {
+    grid-template-columns: auto 200px;
 }

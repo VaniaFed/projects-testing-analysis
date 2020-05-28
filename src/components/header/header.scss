@@ -1,0 +1,47 @@
+header {
+  background: #fff;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__item {
+    margin-right: 10px;
+    &:last-child {
+        margin-right: 0;
+    }
+
+}
+
+.search {
+    &__title {
+        margin-right: 10px;
+    }
+    &__input {
+        padding: 8px 14px;
+        font-size: 18px;
+            border: 1px solid #999;
+        &:focus {
+            border: 1px solid #000;
+        }
+    }
+}
+
+.add-project {
+    width: 39px;
+    height: 39px;
+    background: #fff;
+    border: 1px solid #999;
+    &:hover, &:focus {
+        border: 1px solid #000;
+    }
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    &__search {
+        margin-right: 10px;
+    }
+}

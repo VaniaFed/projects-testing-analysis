@@ -32,11 +32,11 @@ router.get('/projects/', (req, res) => {
     res.status(200).json(projects);
 });
 
-router.get('/projects/:id', async (req, res) => {
+router.get('/projects/:id', (req, res) => {
     const { id } = req.params;
 
-    const selectedProject = projects.filter(project => project.id === id);
-    res.status(200).json({ project: selectedProject });
+    const selectedProject = projects.filter(project => project.id === id)[0];
+    res.status(200).json(selectedProject);
 });
 
 module.exports = router;

@@ -31,7 +31,7 @@ export const ProjectItem = ({ project, className }: ProjetItemProps) => {
         <div className={mixClasses(styles.project, className)}>
             <div className={styles.project__header}>
                 <Link
-                    to={`/project?id=${project.id}`}
+                    to={`/projects/${project.id}`}
                     className={styles.project__name}
                 >
                     {project.name}

@@ -18,23 +18,27 @@ body {
   font: 16px/1.5 Montserrat, Arial, sans-serif;
 }
 
+input {
+  outline: none;
+  &:hover {
+    outline: none;
+  }
+}
 img {
   width: 100%;
 }
 
-header,
-footer {
-  background: #333;
-  padding: 20px 40px;
-}
 
 .hidden {
   display: none;
 }
 
-.main-content {
-  padding: 20px;
+.container {
   width: 1300px;
   margin: 0 auto;
+}
+.main-content {
+  padding: 20px;
+  width: 100%;
   margin-right: 20px;
 }
