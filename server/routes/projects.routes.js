@@ -6,12 +6,26 @@ const projects = [
     {
         id: '1',
         name: 'Drill',
-        numberOfCommits: 56
+        programmingLanguage: 'js',
+        coveragePercent: 0,
+        dateLastChange: '24.02.2000',
+        dateLastUpdate: '24.02.2000',
+        numberOfBugs: 12,
+        numberOfLinesOfCode: 100,
+        classChangesPercent: 13,
+        status: 'passed'
     },
     {
         id: '2',
         name: 'Amway',
-        numberOfCommits: 103
+        programmingLanguage: 'ts',
+        coveragePercent: 20,
+        dateLastChange: '25.02.2000',
+        dateLastUpdate: '24.02.2000',
+        numberOfBugs: 123,
+        numberOfLinesOfCode: 10034,
+        classChangesPercent: 56,
+        status: 'failed'
     }
 ];
 router.get('/projects/', (req, res) => {
