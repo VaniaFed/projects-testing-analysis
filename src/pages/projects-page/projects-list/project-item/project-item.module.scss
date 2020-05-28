@@ -1,0 +1,27 @@
+.project {
+    background: #fff;
+    padding: 20px;
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    &__name {
+        color: #1565C0;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+    &__status {
+        padding: 2px 12px;
+        border-radius: 12px;
+        background: #333;
+        color: #fff;
+        font-size: 14px;
+        &--red {
+            background: #c62828;
+        }
+        &--green {
+            background: #2E7D32;
+        }
+    }
+}

@@ -1,1 +1,1 @@
-export { Card, ICard } from './panel-card';
+export { Card } from './panel-card';
