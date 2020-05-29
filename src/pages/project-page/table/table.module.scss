@@ -4,6 +4,9 @@
         justify-content: space-between;
         border-bottom: 1px solid #333;
         background: #fff;
+        &:last-child {
+            border: none;
+        }
     }
     &__cell {
         margin: 0 auto;
@@ -12,6 +15,9 @@
     &__card {
         flex-direction: row;
         align-items: baseline;
+    }
+    &__main-title {
+        margin-bottom: 20px;
     }
     &__title {
         font-weight: 700;

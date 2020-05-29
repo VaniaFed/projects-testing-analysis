@@ -2,6 +2,7 @@ import React from 'react';
 import { Project } from 'src/types/project';
 import { SidebarSection } from 'pages/projects-page/projects-sidebar/sidebar-section';
 import { TestAttribute } from 'src/types/test-attribute';
+import styles from './project-sidebar.module.scss';
 
 interface ProjectSidebarProps {
     project: Project;
@@ -26,11 +27,10 @@ export const ProjectSidebar = ({ project, history }: ProjectSidebarProps) => {
         }
     ];
 
-    const transformProjectHistory = (history: any) =>
-        history.map((historyItem: any) => ({
-        text: historyItem.action,
-        number: historyItem.date
-    }));
+    const transformProjectHistory = (history: any) => history.map((historyItem: any) => ({
+            text: historyItem.action,
+            number: historyItem.date
+        }));
 
     const projectHistory: TestAttribute[] = transformProjectHistory(history);
     return (
@@ -38,12 +38,18 @@ export const ProjectSidebar = ({ project, history }: ProjectSidebarProps) => {
             <SidebarSection
                 title="About project"
                 testAttributes={[linesOfCode]}
+                className={styles['project-sidebar__section']}
             />
             <SidebarSection
                 title="Project activity"
                 testAttributes={projectActivity}
+                className={styles['project-sidebar__section']}
             />
-            <SidebarSection title="History" testAttributes={projectHistory} />
+            <SidebarSection
+                title="History"
+                testAttributes={projectHistory}
+                className={styles['project-sidebar__section']}
+            />
         </div>
     );
 };

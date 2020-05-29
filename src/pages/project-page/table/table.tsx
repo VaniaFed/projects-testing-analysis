@@ -48,6 +48,14 @@ export const Table = ({ before, after }: TableProps) => {
 
     return (
         <div className={styles.table}>
+            <h2 className={styles['table__main-title']}>Overview</h2>
+            <div className={mixClasses(styles.table__row, styles.table__title)}>
+                <div className={styles.table__cell}>In the base</div>
+                <div className={styles.table__cell}>Recent changes</div>
+            </div>
+            <div className={mixClasses(styles.table__row, styles.table__title)}>
+                <div className={styles.table__cell}>Coverage</div>
+            </div>
             <div className={styles.table__row}>
                 <Panel
                     cards={[{ text: '%', number: '12.5' }]}
