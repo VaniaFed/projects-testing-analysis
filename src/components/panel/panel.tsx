@@ -10,14 +10,15 @@ export const mixClasses = (...classNames: string[]) => {
 interface PanelProps {
     cards: TestAttribute[];
     className?: string;
+    cardClassName?: string;
 }
-export const Panel = ({ cards, className }: PanelProps) => {
+export const Panel = ({ cards, className, cardClassName }: PanelProps) => {
     return (
         <div className={mixClasses(styles.panel__cards, className)}>
             {cards.map(card => (
                 <Card
                     card={card}
-                    className={styles.panel__card}
+                    className={mixClasses(styles.panel__card, cardClassName)}
                     key={`${card.text}${card}`}
                 />
             ))}

@@ -2,9 +2,13 @@ import React from 'react';
 import './header.scss';
 import { Link } from 'react-router-dom';
 
-export const Header = () => {
+interface HeaderProps {
+    className?: string;
+}
+
+export const Header = ({ className }: HeaderProps) => {
     return (
-        <header>
+        <header className={className}>
             <h1 className="header__logo">logo</h1>
             <nav>
                 <Link className="nav__item" to="/">

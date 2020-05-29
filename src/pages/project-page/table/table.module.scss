@@ -1,0 +1,22 @@
+.table {
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #333;
+        background: #fff;
+    }
+    &__cell {
+        margin: 0 auto;
+        padding: 20px;
+    }
+    &__card {
+        flex-direction: row;
+        align-items: baseline;
+    }
+    &__title {
+        font-weight: 700;
+    }
+    &__file {
+        margin-bottom: 8px;
+    }
+}

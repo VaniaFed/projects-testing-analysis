@@ -6,6 +6,7 @@ import { Header } from 'components/header';
 import { getProjects } from './api/get-projects';
 import { ProjectsList } from './projects-list';
 import { ProjectsSidebar } from './projects-sidebar';
+import styles from './projects-page.module.scss';
 
 export const ProjectsPage = () => {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -16,14 +17,12 @@ export const ProjectsPage = () => {
 
     return (
         <div>
-            <Header />
+            <Header className={styles['projects-page__header']} />
             <LayoutWithSidebar>
                 <SidebarLayout>
                     <ProjectsSidebar projects={projects} />
                 </SidebarLayout>
-                <main className="main-content">
-                    <ProjectsList projects={projects} />
-                </main>
+                <ProjectsList projects={projects} />
             </LayoutWithSidebar>
         </div>
     );

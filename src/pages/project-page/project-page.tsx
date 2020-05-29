@@ -7,6 +7,8 @@ import { Header } from 'components/header';
 import { getProject } from './api/get-project';
 import { ProjectSidebar } from './project-sidebar';
 import { getHistory } from './api/get-history';
+import styles from './project-page.module.scss';
+import { Table } from './table';
 
 export const ProjectPage = () => {
     const projectId = (useParams() as any).id;
@@ -21,12 +23,14 @@ export const ProjectPage = () => {
 
     return (
         <div>
-            <Header />
+            <Header className={styles['project-page__header']} />
             <LayoutWithSidebar sidebarPosition="right">
-                <main className="main-content">
-                    {/* <ProjectsList project={project} /> */}
-                    smain
-                </main>
+                {project && (
+                    <Table
+                        before={(project as any).before}
+                        after={(project as any).after}
+                    />
+                )}
                 <SidebarLayout>
                     {project && history && (
                         <ProjectSidebar project={project} history={history} />
