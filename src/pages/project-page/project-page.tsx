@@ -9,6 +9,7 @@ import { ProjectSidebar } from './project-sidebar';
 import { getHistory } from './api/get-history';
 import styles from './project-page.module.scss';
 import { Table } from './table';
+import { ProjectPageHeader } from './project-page-header';
 
 export const ProjectPage = () => {
     const projectId = (useParams() as any).id;
@@ -26,10 +27,19 @@ export const ProjectPage = () => {
             <Header className={styles['project-page__header']} />
             <LayoutWithSidebar sidebarPosition="right">
                 {project && (
-                    <Table
-                        before={(project as any).before}
-                        after={(project as any).after}
-                    />
+                    <div>
+                        <ProjectPageHeader
+                            projectName={project.name}
+                            branchName={(project as any).branchName}
+                            version={(project as any).version}
+                            lastUpdate={project.dateLastUpdate}
+                            className={styles['project-page-content__header']}
+                        />
+                        <Table
+                            before={(project as any).before}
+                            after={(project as any).after}
+                        />
+                    </div>
                 )}
                 <SidebarLayout>
                     {project && history && (

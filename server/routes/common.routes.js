@@ -18,6 +18,8 @@ const history = [
 ];
 
 const projectInfo = {
+    branchName: 'master',
+    version: '1.0',
     before: {
         percent: '29.5%',
         topFiles: [
