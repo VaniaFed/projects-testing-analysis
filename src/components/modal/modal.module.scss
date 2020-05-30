@@ -1,0 +1,22 @@
+.modal {
+    background: #fff;
+    padding: 40px;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+
+    &__btn-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border: none;
+        background: none;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &__title {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+}
