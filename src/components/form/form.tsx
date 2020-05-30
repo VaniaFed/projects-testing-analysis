@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import styles from './form.module.scss';
 import { mixClasses } from '../panel/panel';
 
@@ -6,14 +7,15 @@ export interface FormField {
     label: string;
     name: string;
     id: string;
-    type?: 'text' | 'checkbox' | 'password';
+    required?: boolean;
+    type?: 'text' | 'checkbox' | 'password' | 'email';
 }
 
 interface FormProps {
     fields: FormField[];
     className?: string;
     submitText: string;
-    onInput?: (arg0: any) => void;
+    error?: any;
     onSubmit: (arg0: any) => void;
 }
 
@@ -21,11 +23,16 @@ export const Form = ({
     fields,
     className,
     submitText = 'Submit',
-    onSubmit,
-    onInput
+    error,
+    onSubmit
 }: FormProps) => {
+    const { register, handleSubmit } = useForm();
+
     return (
-        <form className={mixClasses(styles.form, className)}>
+        <form
+            className={mixClasses(styles.form, className)}
+            onSubmit={handleSubmit(onSubmit)}
+        >
             {fields.map(field => {
                 return (
                     <div className={styles.form__input}>
@@ -38,16 +45,16 @@ export const Form = ({
                         <input
                             type={field.type}
                             id={field.id}
-                            name="login"
+                            name={field.name}
                             className={styles.form__field}
-                            onInput={onInput}
+                            ref={register}
+                            required={field.required}
                         />
                     </div>
                 );
             })}
-            <button className={styles.form__button} onClick={onSubmit}>
-                {submitText}
-            </button>
+            <button className={styles.form__button}>{submitText}</button>
+            <div className={styles['form__error-label']}>{error.message}</div>
         </form>
     );
 };
