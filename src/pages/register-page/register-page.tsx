@@ -3,16 +3,15 @@ import { Overlay } from 'layouts/overlay/overlay';
 import { Modal } from 'src/components/modal';
 import { useHistory } from 'react-router-dom';
 import { FormField, Form } from 'src/components/form/';
-import { login } from './api/login';
+import { register } from './api/register';
 
-export const LoginPage = () => {
+export const RegisterPage = () => {
     const history = useHistory();
     const [error, setError] = useState('');
-    const handleSubmitForm = (formState: any) => {
+    const onSubmitForm = (formState: any) => {
         (async () => {
             try {
-                const response = await login(formState);
-
+                const response = await register(formState);
                 history.push('/');
             } catch (err) {
                 setError(err);
@@ -24,27 +23,37 @@ export const LoginPage = () => {
             id: 'login',
             label: 'Login',
             name: 'login',
-            type: 'text',
-            required: true
+            type: 'text'
+        },
+        {
+            id: 'username',
+            label: 'Username',
+            name: 'username',
+            type: 'text'
         },
         {
             id: 'password',
             label: 'Password',
             name: 'password',
-            type: 'password',
-            required: true
+            type: 'password'
+        },
+        {
+            id: 'email',
+            label: 'E-mail',
+            name: 'email',
+            type: 'email'
         }
     ];
     return (
         <div>
             <Overlay>
                 <Modal
-                    title="Login"
+                    title="Register"
                     form={
                         <Form
                             fields={formFields}
-                            onSubmit={handleSubmitForm}
-                            submitText="Login"
+                            onSubmit={onSubmitForm}
+                            submitText="Register"
                             error={error}
                         />
                     }

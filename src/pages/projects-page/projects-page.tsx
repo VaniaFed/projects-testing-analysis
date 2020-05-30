@@ -13,7 +13,7 @@ export const ProjectsPage = () => {
 
     useEffect(() => {
         getProjects().then(projects => setProjects(projects));
-    });
+    }, []);
 
     return (
         <div>
