@@ -54,7 +54,11 @@ export const Form = ({
                 );
             })}
             <button className={styles.form__button}>{submitText}</button>
-            <div className={styles['form__error-label']}>{error.message}</div>
+            {error && error.message && error.message.length > 0 && (
+                <div className={styles['form__error-label']}>
+                    {error.message}
+                </div>
+            )}
         </form>
     );
 };

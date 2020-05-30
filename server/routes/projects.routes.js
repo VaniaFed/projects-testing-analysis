@@ -39,4 +39,10 @@ router.get('/projects/:id', (req, res) => {
     res.status(200).json(selectedProject);
 });
 
+router.post('/import-project/', (req, res) => {
+    console.log(req.body);
+
+    res.status(201).json({ error: false, message: '' });
+});
+
 module.exports = router;
