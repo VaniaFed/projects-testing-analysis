@@ -1,0 +1,28 @@
+@import "~common/style-guide/_colors.scss";
+
+.file-line {
+    display: flex;
+    
+    &__number {
+        margin-right: 40px;
+        user-select: none;
+        width: 0;
+    }
+
+    &__content {
+        background: #fff;
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    &__border {
+        border-left: 5px solid transparent;
+        margin-left: -5px;
+        &--red {
+            border-color: $red;
+        }
+        &--green {
+            border-color: $green;
+        }
+    }
+}

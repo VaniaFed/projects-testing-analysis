@@ -1,6 +1,6 @@
+import { Line } from './line';
+
 export interface File {
-    name: 'string';
-    changes: string;
-    bugs: string;
-    coverage: string;
+    name: string;
+    lines: Line[];
 }

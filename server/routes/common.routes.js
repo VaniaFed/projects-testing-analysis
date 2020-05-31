@@ -82,17 +82,16 @@ const projectInfo = {
                 bugs: 13,
                 coverage: 15
             }
-        ],
-        newCodeLines: 23
+        ]
     }
 };
 
 router.get('/history', (req, res) => {
-    res.status(200).json(history);
+    res.status(200).json({ history });
 });
 
 router.get('/project-info', (req, res) => {
-    res.status(200).json(projectInfo);
+    res.status(200).json({ projectInfo });
 });
 
 module.exports = router;

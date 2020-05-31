@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './header.scss';
 import { Link } from 'react-router-dom';
 import { HeaderModalImportProject } from './__header-modal-import-project';
+import { mixClasses } from '../panel/panel';
 
 interface HeaderProps {
     className?: string;
@@ -12,8 +13,8 @@ export const Header = ({ className }: HeaderProps) => {
     const openModalImportProject = () => setModalOpened(true);
     const closeModalImportProject = () => setModalOpened(false);
     return (
-        <header className={className}>
-            <h1 className="header__logo">logo</h1>
+        <header className={mixClasses('header', className)}>
+            <h1 className="header__logo">Drill's neighbour</h1>
             <nav>
                 <Link className="nav__item" to="/">
                     Projects

@@ -1,0 +1,18 @@
+.file-header {
+    background: #f3f3f3;
+    padding: 10px 14px;
+    border: 1px solid #bbb;
+    &__project-name {
+        font-size: 14px;
+    }
+}
+
+.file__content {
+    background: #f3f3f3;
+    border: 1px solid #999;
+    border-top: none;
+    padding: 0 20px;
+    white-space: pre;
+    font-size: 14px;
+    font-weight: 500;
+}
