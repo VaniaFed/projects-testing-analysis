@@ -10,6 +10,7 @@ import { ProjectSidebar } from './project-sidebar';
 import styles from './project-page.module.scss';
 import { Table } from './table';
 import { ProjectPageHeader } from './project-page-header';
+import { startAnalysis } from './api/start-analysis';
 
 export const ProjectPage = () => {
     const projectId = (useParams() as any).id;
@@ -22,12 +23,39 @@ export const ProjectPage = () => {
         getHistory(projectId).then(history => setHistory(history));
     }, []);
 
+    const buttonStartAnalysis = (
+        <button
+            onClick={() => {
+                startAnalysis(projectId).then(() => {
+                    if (project) {
+                        const newProject: Project = {
+                            ...project,
+                            status: 'in progress'
+                        };
+                        setProject(newProject);
+                    }
+                });
+            }}
+            className={styles['project-page__start-analysis']}
+        >
+            Start analysis
+        </button>
+    );
+    const labelInProgress = (
+        <div className={styles['project-page__label-status']}>
+            Analysis is in progress
+        </div>
+    );
+
     return (
         <div>
             <Header className={styles['project-page__header']} />
             <LayoutWithSidebar sidebarPosition="right">
                 {project && (
                     <div>
+                        {project.status === 'in progress'
+                            ? labelInProgress
+                            : buttonStartAnalysis}
                         <ProjectPageHeader
                             projectName={project.name}
                             branchName={(project as any).branchName}

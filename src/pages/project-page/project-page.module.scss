@@ -1,7 +1,21 @@
+@import "~common/style-guide/_colors.scss";
+
 .project-page__header {
     margin-bottom: 20px;
 }
 
 .project-page-content__header {
+    margin-bottom: 20px;
+}
+
+.project-page__start-analysis {
+    padding: 10px 20px;
+    background: $green;
+    color: #fff;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.project-page__label-status {
     margin-bottom: 20px;
 }

@@ -7,6 +7,7 @@ export async function register(registerInfo: any) {
 
     localStorage.setItem('authToken', response.data.token);
     localStorage.setItem('userName', response.data.userName);
+    localStorage.setItem('userId', response.data.userId);
 
     return response.data;
 }

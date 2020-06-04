@@ -14,8 +14,9 @@ export const Header = ({ className }: HeaderProps) => {
     const closeModalImportProject = () => setModalOpened(false);
     const userName = localStorage.getItem('userName');
     const logout = () => {
-        localStorage.removeItem('userName');
         localStorage.removeItem('authToken');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userId');
         window.location.reload();
     };
 

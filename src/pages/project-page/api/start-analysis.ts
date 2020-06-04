@@ -1,18 +1,15 @@
 import axios from 'axios';
 import { authHeader } from 'src/_helpers/auth-header';
 
-export async function importProject(project: any) {
+export async function startAnalysis(projectId: string) {
     const config = {
         headers: authHeader()
     };
-
-    const userId = localStorage.getItem('userId');
-
     const response = await axios.post(
-        `/api/${userId}/import-project/`,
-        project,
+        `/api/${projectId}/analyze`,
+        null,
         config
     );
 
-    return response;
+    return response.data.history;
 }

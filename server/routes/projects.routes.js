@@ -86,7 +86,7 @@ file.lines[17].color = 'green';
 file.lines[18].color = 'green';
 file.lines[19].color = 'green';
 
-router.get('/projects/', (req, res) => {
+router.get('/:userId/projects/', (req, res) => {
     res.status(200).json({ projects });
 });
 
@@ -103,10 +103,17 @@ router.get('/projects/:projectId/files/:fileId', (req, res) => {
     res.status(200).json({ file });
 });
 
-router.post('/import-project/', (req, res) => {
+router.post('/:userId/import-project/', (req, res) => {
     console.log(req.body);
 
     res.status(201).json({ error: false, message: '' });
+});
+
+router.post('/:projectId/analyze', (req, res) => {
+    console.log(req.params);
+    console.log('starting the analysis');
+
+    res.status(200).json({ error: false, message: '' });
 });
 
 module.exports = router;
