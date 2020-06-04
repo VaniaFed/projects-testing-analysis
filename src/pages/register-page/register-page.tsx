@@ -11,8 +11,9 @@ export const RegisterPage = () => {
     const onSubmitForm = (formState: any) => {
         (async () => {
             try {
-                const response = await register(formState);
-                history.push('/');
+                await register(formState);
+
+                window.location.reload();
             } catch (err) {
                 setError(err);
             }

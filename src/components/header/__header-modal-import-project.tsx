@@ -24,7 +24,6 @@ const handleImportProject = (formState: any) => {
     try {
         (async () => {
             const response = await importProject(formState);
-            console.log(response);
         })();
     } catch (err) {
         console.log(err);

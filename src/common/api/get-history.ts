@@ -1,7 +1,14 @@
 import axios from 'axios';
+import { authHeader } from 'src/_helpers/auth-header';
 
 export async function getHistory(projectId: string) {
-    const history = await axios.get(`/api/history?projectId=${projectId}`);
+    const config = {
+        headers: { Authorization: `Bearer ${authHeader()}` }
+    };
+    const history = await axios.get(
+        `/api/history?projectId=${projectId}`,
+        config
+    );
 
     return history.data.history;
 }

@@ -11,9 +11,9 @@ export const LoginPage = () => {
     const handleSubmitForm = (formState: any) => {
         (async () => {
             try {
-                const response = await login(formState);
+                await login(formState);
 
-                history.push('/');
+                window.location.reload();
             } catch (err) {
                 setError(err);
             }
