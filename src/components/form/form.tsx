@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './form.module.scss';
 import { mixClasses } from '../panel/panel';
@@ -15,7 +15,9 @@ interface FormProps {
     fields: FormField[];
     className?: string;
     submitText: string;
+    bottomContent?: ReactNode;
     error?: any;
+    onChangeCheckbox?: any;
     onSubmit: (arg0: any) => void;
 }
 
@@ -24,7 +26,9 @@ export const Form = ({
     className,
     submitText = 'Submit',
     error,
-    onSubmit
+    bottomContent,
+    onSubmit,
+    onChangeCheckbox = () => {}
 }: FormProps) => {
     const { register, handleSubmit } = useForm();
 
@@ -48,6 +52,11 @@ export const Form = ({
                             name={field.name}
                             className={styles.form__field}
                             ref={register}
+                            onChange={
+                                field.type === 'checkbox'
+                                    ? onChangeCheckbox
+                                    : () => {}
+                            }
                             required={field.required}
                         />
                     </div>
@@ -59,6 +68,7 @@ export const Form = ({
                     {error.message}
                 </div>
             )}
+            {bottomContent}
         </form>
     );
 };

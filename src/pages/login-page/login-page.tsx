@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Overlay } from 'layouts/overlay/overlay';
 import { Modal } from 'src/components/modal';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { FormField, Form } from 'src/components/form/';
 import { login } from './api/login';
 
@@ -35,6 +35,11 @@ export const LoginPage = () => {
             required: true
         }
     ];
+    const registerLink = (
+        <div className="form__bottom-content">
+            <Link to="/register">Register</Link>
+        </div>
+    );
     return (
         <div>
             <Overlay>
@@ -46,6 +51,7 @@ export const LoginPage = () => {
                             onSubmit={handleSubmitForm}
                             submitText="Login"
                             error={error}
+                            bottomContent={registerLink}
                         />
                     }
                 />

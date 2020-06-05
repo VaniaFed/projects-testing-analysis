@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Overlay } from 'layouts/overlay/overlay';
 import { Modal } from 'src/components/modal';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { FormField, Form } from 'src/components/form/';
 import { register } from './api/register';
 
@@ -45,6 +45,12 @@ export const RegisterPage = () => {
             type: 'email'
         }
     ];
+
+    const loginLink = (
+        <div className="form__bottom-content">
+            <Link to="/login">Login</Link>
+        </div>
+    );
     return (
         <div>
             <Overlay>
@@ -56,6 +62,7 @@ export const RegisterPage = () => {
                             onSubmit={onSubmitForm}
                             submitText="Register"
                             error={error}
+                            bottomContent={loginLink}
                         />
                     }
                 />

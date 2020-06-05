@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthenticatedApp } from './authenticated-app';
 import { UnauthenticatedApp } from './unauthenticated-app';
 
