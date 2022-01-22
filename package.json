@@ -112,7 +112,7 @@
         "next-apollo": "^3.0.3",
         "next-compose-plugins": "^2.2.0",
         "next-images": "^1.1.2",
-        "node-fetch": "^2.6.0",
+        "node-fetch": "^3.1.1",
         "prop-types": "^15.7.2",
         "query-string": "^6.8.2",
         "react": "^16.8.6",
